@@ -1,46 +1,63 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
-    <link rel="stylesheet" href="src/style.css" />
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&amp;family=PT+Mono&amp;family=Pinyon+Script&amp;family=Roboto:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
 
-    <title>Document</title>
+    <title>Wellness Advisor</title>
   </head>
   <body>
     <div class="container">
       <header>
-        <h1>AI French Poem Generator</h1>
+        <h1>Wellness Advisor</h1>
       </header>
-      <div class="poem-container">
-        <form id="poem-generator-form">
-          <input
-            type="text"
-            placeholder="Enter the topic of a French poem"
-            autofocus
-            required
-            autocomplete="off"
-            class="submit-form"
-            id="instructions-input"
-          />
-          <input type="submit" class="submit-button" />
-        </form>
-        <div class="hint">e.g. flower, Paris or cheese</div>
-      </div>
-      <div class="poem hidden" id="poem"></div>
-      <footer>
-        This project was coded by
-        <a href="https://github.com/lydiamatz"> Lydia Matziaraki </a>, is
-        <a href="https://github.com/lydiamatz/French-Poems-Generator.git"
-          >open sourced on Github</a
+<main>
+      <div class="summary-container">
+  <form id="input-user">
+    <input
+      type="text"
+      class="input-keywords"
+      id="instructions-input"
+      placeholder="Example: 45-year-old male, tired, high stress job, big social circle."
+      requireds
+    />
+    <input type="submit" value="Create" class="input-button" />
+  </form>
+
+  <div class="hint">
+    <strong>To get the best result, include:</strong><br>
+    • Age (if relevant)<br>
+    • Main symptoms or concerns<br>
+    • Lifestyle habits (sleep, diet, stress, exercise)<br>
+    • Protective habits or strengths
+  </div>
+</div>
+
+<div class="answer" id="summary">
+  <br>
+  <em>Your structured health summary will appear here.</em>
+</div>
+
+   <footer>
+        This AI project was coded by
+        <a href="https://github.com/matthieua/" target="_blank">Matt Delac</a>
+        and is
+        <a
+          href="https://github.com/shecodesio/french-poem-generator"
+          target="_blank"
         >
-        and is hosted on
-        <a href="https://french-poem-generator91.netlify.app/"> Netlify.</a>
+          open-sourced on GitHub</a
+        >
+        and is
+        <a href="https://ai-french-poem-generator.netlify.app/" target="_blank"
+          >hosted on Netlify</a
+        >.
       </footer>
     </div>
-
-    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
-    <script src="src/index.js"></script>
+    <script src="index.js"></script>
   </body>
 </html>
