@@ -1,15 +1,15 @@
 function displaySummary(response) {
   let output = response.data.answer;
 
+  const summaryElement = document.querySelector("#summary");
   const lines = output.split("\n").filter((line) => line.trim() !== "");
 
   let html = "";
   let listItems = "";
 
-  lines.forEach((line, index) => {
+  lines.forEach((line) => {
     const cleanLine = line.replace(/^[-•]\s*/, "").trim();
 
-    // If it's the header, don't wrap in <li>
     if (cleanLine.toLowerCase().startsWith("recommendations")) {
       html += `<strong>${cleanLine}</strong>`;
     } else {
@@ -19,13 +19,10 @@ function displaySummary(response) {
 
   html += `<ul>${listItems}</ul>`;
 
-  new Typewriter("#summary", {
-    strings: [html],
-    autoStart: true,
-    delay: 10,
-    cursor: "",
-  });
+  // 🔥 Just render it normally
+  summaryElement.innerHTML = html;
 }
+
 function generateSummary(event) {
   event.preventDefault();
 
@@ -50,7 +47,7 @@ Rules:
 `;
 
   let prompt = `
-Output only actionable lifestyle/health recommendations in bullet points based on the following user input. 
+Output only actionable lifestyle/health recommendations in bullet points (max five) based on the following user input. 
 Do NOT repeat symptoms or mention missing information. Start with Recommendations: (no bullet on Recommendations) and then list below what you suggest in bullet points.
 User input:
 ${instructionsInput.value}
@@ -62,7 +59,7 @@ ${instructionsInput.value}
 
   let summaryElement = document.querySelector("#summary");
   summaryElement.classList.remove("hidden");
-  summaryElement.innerHTML = `<div class="generating">⏳ Generating summary about ${instructionsInput.value}</div>`;
+  summaryElement.innerHTML = `<div class="generating">🌸 Thank you for sharing a little about yourself. 🌸 </div>`;
 
   axios.get(apiURL).then(displaySummary);
 }

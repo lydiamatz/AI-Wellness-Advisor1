@@ -8,43 +8,46 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&amp;family=PT+Mono&amp;family=Pinyon+Script&amp;family=Roboto:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
 
-    <title>Wellness Advisor</title>
+    <title>AI Wellness Advisor</title>
   </head>
   <body>
     <div class="container">
       <header>
-        <h1>Wellness Advisor</h1>
+        <h1>AI Wellness Advisor</h1>
       </header>
 <main>
-      <div class="summary-container">
+      <div class="wellness-form">
   <form id="input-user">
     <input
       type="text"
       class="input-keywords"
       id="instructions-input"
-      placeholder="Example: 45-year-old male, tired, high stress job, big social circle."
-      requireds
-    />
+      placeholder="Example: 45-year-old male, eats well, high stress job"
+     autofocus
+              required
+              \
+            />
     <input type="submit" value="Create" class="input-button" />
   </form>
 
   <div class="hint">
-    <strong>To get the best result, include:</strong><br>
-    • Age (if relevant)<br>
-    • Main symptoms or concerns<br>
-    • Lifestyle habits (sleep, diet, stress, exercise)<br>
-    • Protective habits or strengths
-  </div>
-</div>
+    <strong>🌿 To get the best result, include: </strong><br>
+    Age, gender, main concerns, lifestyle habits (sleep, diet, stress, exercise) 
 
-<div class="answer" id="summary">
+  </div>
+  </div>
+  <div>
+
+<div class="generated-answer" id="summary">
   <br>
-  <em>Your structured health summary will appear here.</em>
+  <em>First, take a slow breath — you’re already taking a positive step.✨</em></br>
 </div>
+</div>
+</main>
 
    <footer>
         This AI project was coded by
-        <a href="https://github.com/matthieua/" target="_blank">Matt Delac</a>
+        <a href="https://github.com/matthieua/" target="_blank">Lydia Matziaraki</a>
         and is
         <a
           href="https://github.com/shecodesio/french-poem-generator"
@@ -57,7 +60,6 @@
           >hosted on Netlify</a
         >.
       </footer>
-    </div>
     <script src="index.js"></script>
   </body>
 </html>
